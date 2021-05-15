@@ -2,7 +2,7 @@
   <Layout>
     <!-- Page Header-->
     <header class="masthead"
-            :style="`background-image: url(${GRIDSOME_API_URL+general.cover?general.cover.url:''})`">
+            :style="`background-image: url(${GRIDSOME_API_URL}${general.cover?general.cover.url:''})`">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -99,6 +99,9 @@ export default {
     general() {
       return this.$page.general.edges[0].node;
     },
+  },
+  mounted() {
+    console.log(this.GRIDSOME_API_URL);
   },
   metaInfo: {
     title: "Hello, world!",
